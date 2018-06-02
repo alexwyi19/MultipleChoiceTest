@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Multiple Choice Quiz Input</title>
+	</head>
+	<body>
+		<script>
+	var counter = 4;
+	function addRow() {
+	    var table = document.getElementById("QuizInput");
+	    var row = table.insertRow(counter++);
+	    var cell1 = row.insertCell(0);
+	    var cell2 = row.insertCell(1);
+	    cell1.innerHTML = "<input type='text' name='keyword"+(counter-1)+"' id='k"+(counter-1)+"'/>";
+	    cell2.innerHTML = "<input type='text' name='definition"+(counter-1)+"' id='d"+(counter-1)+"'/>";
+	}
+	function removeRow() {
+		if(counter!=2) document.getElementById("QuizInput").deleteRow(--counter);
+	}
+	</script>
+		<h1>Multiple Choice Quiz Input</h1>
+		<form name="QuizInput" method="GET" action="myServlet">
+			<table id="QuizInput">
+			  <tr>
+			    <td>Key</td>
+			    <td>Definition</td>
+			  </tr>
+			  <tr>
+			    <td><input type="text" name="keyword1" id="k1"/></td>
+			    <td><input type="text" name="definition1" id="d1"/></td>
+			  </tr>
+			  <tr>
+			    <td><input type="text" name="keyword2" id="k2"/></td>
+			    <td><input type="text" name="definition2" id="d2"/></td>
+			  </tr>
+			  <tr>
+			    <td><input type="text" name="keyword3" id="k3"/></td>
+			    <td><input type="text" name="definition3" id="d3"/></td>
+			  </tr>
+			</table>
+			<button onclick="addRow()">Add</button> <button onclick="removeRow()">Remove</button>
+			<br>
+			<input type="submit" value="Submit My Form"/>
+		</form>
+	</body>
+</html>
