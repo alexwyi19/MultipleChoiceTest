@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<script>
-	var counter = 4;
+	var counter = 5;
 	function addRow() {
 	    var table = document.getElementById("QuizInput");
 	    var row = table.insertRow(counter++);
@@ -16,7 +16,7 @@
 	    cell2.innerHTML = "<input type='text' name='definition"+(counter-1)+"' id='d"+(counter-1)+"'/>";
 	}
 	function removeRow() {
-		if(counter!=2) document.getElementById("QuizInput").deleteRow(--counter);
+		if(counter!=5) document.getElementById("QuizInput").deleteRow(--counter);
 	}
 	</script>
 		<h1>Multiple Choice Quiz Input</h1>
@@ -37,6 +37,10 @@
 			  <tr>
 			    <td><input type="text" name="keyword3" id="k3"/></td>
 			    <td><input type="text" name="definition3" id="d3"/></td>
+			  </tr>
+			  <tr>
+			    <td><input type="text" name="keyword4" id="k4"/></td>
+			    <td><input type="text" name="definition4" id="d4"/></td>
 			  </tr>
 			</table>
 			<button onclick="addRow()">Add</button> <button onclick="removeRow()">Remove</button>
